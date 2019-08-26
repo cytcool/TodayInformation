@@ -11,7 +11,6 @@ import android.widget.RadioGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 @ViewInject(mainlayoutid = R.layout.activity_main)
@@ -37,12 +36,8 @@ public class MainActivity extends BaseActivity {
     private boolean isChangeTopOrBottom;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+    public void afterBindView() {
         changeAnim(rgMainBottom,rgMainTop);
-
     }
 
     @OnClick(R.id.fac_main_home)

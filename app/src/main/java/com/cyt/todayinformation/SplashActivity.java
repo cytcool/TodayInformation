@@ -9,27 +9,24 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.cyt.todayinformation.mvp.ISplashActivityContract;
+
 import java.io.File;
 
 import butterknife.BindView;
 
 @ViewInject(mainlayoutid = R.layout.activity_splash)
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity implements ISplashActivityContract.Iview {
 
     @BindView(R.id.vv_play)
     FullScreenVideoView vvPlay;
     @BindView(R.id.tv_splash_timer)
     TextView tvSplashTimer;
 
-
-    private SplashTimerPresenter timerPresenter;
-
+    private ISplashActivityContract.IPresenter timerPresenter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_splash);
-
+    public void afterBindView() {
         initTimerPresenter();
         initListener();
         initVideo();
@@ -45,8 +42,8 @@ public class SplashActivity extends AppCompatActivity {
         vvPlay.setVideoURI(Uri.parse("android.resource://" + getPackageName() + File.separator + R.raw.splash));
         vvPlay.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                mediaPlayer.start();
+            public void onPrepared(MediaPlayer mp) {
+                mp.start();
             }
         });
     }
@@ -64,6 +61,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                finish();
             }
         });
 
@@ -72,9 +70,9 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        timerPresenter.cancel();
     }
 
+    @Override
     public void setTvTimer(String s) {
         tvSplashTimer.setText(s);
     }

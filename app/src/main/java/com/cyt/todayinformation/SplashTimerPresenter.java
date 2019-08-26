@@ -1,24 +1,27 @@
 package com.cyt.todayinformation;
 
-public class SplashTimerPresenter {
+import com.cyt.todayinformation.mvp.ISplashActivityContract;
+import com.cyt.todayinformation.mvp.base.BaseMvpPresenter;
+
+public class SplashTimerPresenter extends BaseMvpPresenter<ISplashActivityContract.Iview> implements ISplashActivityContract.IPresenter {
 
     private CustomCountDownTimer mCustomCountDownTimer;
-    private SplashActivity mActivity;
 
-    public SplashTimerPresenter(SplashActivity activity){
-        this.mActivity = activity;
+    public SplashTimerPresenter(ISplashActivityContract.Iview view) {
+        super(view);
     }
+
 
     public void initTimer(){
         mCustomCountDownTimer = new CustomCountDownTimer(5, new CustomCountDownTimer.ICountDownHandler() {
             @Override
             public void onTicker(int time) {
-                mActivity.setTvTimer(time + "秒");
+                getView().setTvTimer(time + "秒");
             }
 
             @Override
             public void onFinish() {
-                mActivity.setTvTimer("跳过");
+                getView().setTvTimer("跳过");
             }
         });
 
@@ -27,5 +30,17 @@ public class SplashTimerPresenter {
 
     public void cancel(){
         mCustomCountDownTimer.cancel();
+    }
+
+
+    @Override
+    protected ISplashActivityContract.Iview getEmptyView() {
+        return ISplashActivityContract.emptyView;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        cancel();
     }
 }

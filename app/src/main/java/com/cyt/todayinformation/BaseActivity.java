@@ -3,9 +3,12 @@ package com.cyt.todayinformation;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class BaseActivity extends AppCompatActivity {
+import com.cyt.todayinformation.mvp.view.LifeCircleMvpActivity;
+
+import butterknife.ButterKnife;
+
+public abstract class BaseActivity extends LifeCircleMvpActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -15,11 +18,20 @@ public class BaseActivity extends AppCompatActivity {
             int mainlayoutid = annotation.mainlayoutid();
             if (mainlayoutid >0 ){
                 setContentView(mainlayoutid);
+                bindView();
+                afterBindView();
             }else {
                 throw new RuntimeException("mainlayoutid < 0");
             }
         }else {
             throw new RuntimeException("annotation = null");
         }
+    }
+
+    public abstract void afterBindView();
+
+    // View 的依赖注入绑定
+    private void bindView(){
+        ButterKnife.bind(this);
     }
 }
