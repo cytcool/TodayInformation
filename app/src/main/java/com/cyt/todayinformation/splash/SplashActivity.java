@@ -1,15 +1,15 @@
-package com.cyt.todayinformation;
+package com.cyt.todayinformation.splash;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.cyt.todayinformation.mvp.ISplashActivityContract;
+import com.cyt.todayinformation.base.BaseActivity;
+import com.cyt.todayinformation.main.MainActivity;
+import com.cyt.todayinformation.R;
+import com.cyt.todayinformation.base.ViewInject;
 
 import java.io.File;
 

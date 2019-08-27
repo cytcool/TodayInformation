@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity">
+    tools:context=".splash.SplashActivity">
 
-    <com.cyt.todayinformation.FullScreenVideoView
+    <com.cyt.todayinformation.splash.FullScreenVideoView
         android:id="@+id/vv_play"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

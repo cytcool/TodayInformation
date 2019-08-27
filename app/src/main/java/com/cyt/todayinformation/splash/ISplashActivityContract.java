@@ -1,12 +1,16 @@
-package com.cyt.todayinformation.mvp;
+package com.cyt.todayinformation.splash;
+
+import com.cyt.todayinformation.mvp.ILifeCircle;
+import com.cyt.todayinformation.mvp.IMvpView;
+import com.cyt.todayinformation.mvp.MvpController;
 
 public interface ISplashActivityContract {
 
-    interface Iview extends IMvpView{
+    interface Iview extends IMvpView {
         void setTvTimer(String timer);
     }
 
-    interface IPresenter extends ILifeCircle{
+    interface IPresenter extends ILifeCircle {
         void initTimer();
     }
 

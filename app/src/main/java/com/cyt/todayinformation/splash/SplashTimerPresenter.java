@@ -1,6 +1,5 @@
-package com.cyt.todayinformation;
+package com.cyt.todayinformation.splash;
 
-import com.cyt.todayinformation.mvp.ISplashActivityContract;
 import com.cyt.todayinformation.mvp.base.BaseMvpPresenter;
 
 public class SplashTimerPresenter extends BaseMvpPresenter<ISplashActivityContract.Iview> implements ISplashActivityContract.IPresenter {

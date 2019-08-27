@@ -1,4 +1,4 @@
-package com.cyt.todayinformation;
+package com.cyt.todayinformation.splash;
 
 import android.os.Handler;
 

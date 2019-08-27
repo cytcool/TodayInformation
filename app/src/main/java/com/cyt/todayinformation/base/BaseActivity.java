@@ -1,4 +1,4 @@
-package com.cyt.todayinformation;
+package com.cyt.todayinformation.base;
 
 import android.os.Bundle;
 

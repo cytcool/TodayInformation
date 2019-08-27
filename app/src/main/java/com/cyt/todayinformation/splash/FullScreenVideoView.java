@@ -1,4 +1,4 @@
-package com.cyt.todayinformation;
+package com.cyt.todayinformation.splash;
 
 import android.content.Context;
 import android.util.AttributeSet;
