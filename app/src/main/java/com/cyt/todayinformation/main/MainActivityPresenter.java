@@ -7,7 +7,7 @@ import com.cyt.todayinformation.main.beijing.BeijingFragment;
 import com.cyt.todayinformation.main.hangzhou.HangzhouFragment;
 import com.cyt.todayinformation.main.shanghai.ShanghaiFragment;
 import com.cyt.todayinformation.main.shenzhen.ShenzhenFragment;
-import com.cyt.todayinformation.mvp.base.BaseMvpPresenter;
+import com.cyt.mvp.mvp.base.BaseMvpPresenter;
 
 public class MainActivityPresenter extends BaseMvpPresenter<IMainActivityContract.Iview> implements IMainActivityContract.IPresenter {
 

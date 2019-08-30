@@ -1,4 +1,4 @@
-package com.cyt.todayinformation.mvp;
+package com.cyt.mvp.mvp;
 
 import android.content.Intent;
 import android.os.Bundle;

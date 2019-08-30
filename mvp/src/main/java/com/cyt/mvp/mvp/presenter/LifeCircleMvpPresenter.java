@@ -1,9 +1,9 @@
-package com.cyt.todayinformation.mvp.presenter;
+package com.cyt.mvp.mvp.presenter;
 
 
-import com.cyt.todayinformation.mvp.ILifeCircle;
-import com.cyt.todayinformation.mvp.IMvpView;
-import com.cyt.todayinformation.mvp.MvpController;
+import com.cyt.mvp.mvp.ILifeCircle;
+import com.cyt.mvp.mvp.IMvpView;
+import com.cyt.mvp.mvp.MvpController;
 
 import java.lang.ref.WeakReference;
 

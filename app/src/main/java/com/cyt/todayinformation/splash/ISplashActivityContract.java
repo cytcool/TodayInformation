@@ -1,8 +1,8 @@
 package com.cyt.todayinformation.splash;
 
-import com.cyt.todayinformation.mvp.ILifeCircle;
-import com.cyt.todayinformation.mvp.IMvpView;
-import com.cyt.todayinformation.mvp.MvpController;
+import com.cyt.mvp.mvp.ILifeCircle;
+import com.cyt.mvp.mvp.IMvpView;
+import com.cyt.mvp.mvp.MvpController;
 
 public interface ISplashActivityContract {
 

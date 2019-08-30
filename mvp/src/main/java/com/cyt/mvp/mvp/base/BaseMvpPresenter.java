@@ -1,10 +1,10 @@
-package com.cyt.todayinformation.mvp.base;
+package com.cyt.mvp.mvp.base;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.cyt.todayinformation.mvp.IMvpView;
-import com.cyt.todayinformation.mvp.presenter.LifeCircleMvpPresenter;
+import com.cyt.mvp.mvp.presenter.LifeCircleMvpPresenter;
+import com.cyt.mvp.mvp.IMvpView;
 
 public abstract class BaseMvpPresenter<T extends IMvpView> extends LifeCircleMvpPresenter<T> {
 

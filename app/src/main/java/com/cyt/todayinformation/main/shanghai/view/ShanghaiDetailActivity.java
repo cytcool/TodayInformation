@@ -29,6 +29,14 @@ public class ShanghaiDetailActivity extends BaseActivity {
     @Override
     public void afterBindView() {
         initAnim();
+        initGetNewData();
+    }
+
+    /**
+     * 发送网络请求数据
+     */
+    private void initGetNewData() {
+        
     }
 
     private void initAnim() {
@@ -41,7 +49,7 @@ public class ShanghaiDetailActivity extends BaseActivity {
     }
 
     /**
-     * 用于Android 5.0系统过的界面转场动画：共享动画元素
+     * 用于Android 5.0系统过的界面转场动画：共享元素动画
      */
     public static void start(Activity activity, View view){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){

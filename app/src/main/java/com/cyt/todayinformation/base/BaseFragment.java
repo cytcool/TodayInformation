@@ -9,8 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.cyt.todayinformation.mvp.view.LifeCircleMvpActivity;
-import com.cyt.todayinformation.mvp.view.LifeCircleMvpFragment;
+import com.cyt.mvp.mvp.view.LifeCircleMvpFragment;
 
 import butterknife.ButterKnife;
 
