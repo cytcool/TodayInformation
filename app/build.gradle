@@ -38,4 +38,5 @@ dependencies {
     // OkHttp
     implementation("com.squareup.okhttp3:okhttp:4.1.0")
     implementation project(path: ':mvp')
+    implementation project(path: ':http')
 }

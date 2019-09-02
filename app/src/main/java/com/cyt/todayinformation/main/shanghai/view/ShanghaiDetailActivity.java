@@ -15,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import com.cyt.todayinformation.R;
 import com.cyt.todayinformation.base.BaseActivity;
 import com.cyt.todayinformation.base.ViewInject;
+import com.cyt.todayinformation.main.shanghai.module.ShanghaiDetailHttpTask;
 
 import butterknife.BindView;
 
@@ -36,7 +37,7 @@ public class ShanghaiDetailActivity extends BaseActivity {
      * 发送网络请求数据
      */
     private void initGetNewData() {
-        
+        Object desc = new ShanghaiDetailHttpTask().getXiaoHuaList("desc","1","1");
     }
 
     private void initAnim() {
