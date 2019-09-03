@@ -1,7 +1,6 @@
 package com.cyt.todayinformation.main.shanghai.view;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.view.View;
@@ -15,12 +14,16 @@ import androidx.core.view.ViewCompat;
 import com.cyt.todayinformation.R;
 import com.cyt.todayinformation.base.BaseActivity;
 import com.cyt.todayinformation.base.ViewInject;
-import com.cyt.todayinformation.main.shanghai.module.ShanghaiDetailHttpTask;
+import com.cyt.todayinformation.main.shanghai.lf.IShanghaiDetailContract;
+import com.cyt.todayinformation.main.shanghai.manager.GetXiaoHuaTask;
+import com.cyt.todayinformation.main.shanghai.presenter.ShanghaiDetailPresenter;
 
 import butterknife.BindView;
 
 @ViewInject(mainlayoutid = R.layout.activity_shanghai_detail)
-public class ShanghaiDetailActivity extends BaseActivity {
+public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDetailContract.Iview {
+
+    private IShanghaiDetailContract.IPresenter mPresenter = new ShanghaiDetailPresenter(this);
 
     public static String mActivityOptionsCompat = "ShanghaiDetailActivity";
 
@@ -37,7 +40,12 @@ public class ShanghaiDetailActivity extends BaseActivity {
      * 发送网络请求数据
      */
     private void initGetNewData() {
-        Object desc = new ShanghaiDetailHttpTask().getXiaoHuaList("desc","1","1");
+
+        mPresenter.getNetData();
+
+//        Object desc = new ShangHaiDetailHttpServer().getXiaoHuaList("desc","1","1");
+        GetXiaoHuaTask task = new GetXiaoHuaTask();
+        task.execute("desc","1","1");
     }
 
     private void initAnim() {
