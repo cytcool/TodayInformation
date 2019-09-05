@@ -3,18 +3,17 @@ package com.cyt.task;
 import com.cyt.task.tools.ThreadUtil;
 
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
-public class AsyncTaskInstance extends FutureTask {
+public class AsyncTaskInstance<Result> extends FutureTask<Result> {
 
     private ITaskBackground iTaskBackground;
     private ITaskCallback iTaskCallback;
 
-    public AsyncTaskInstance(final ITaskBackground iTaskBackground, ITaskCallback iTaskCallback) {
-        super(new Callable() {
+    public AsyncTaskInstance(final ITaskBackground<Result> iTaskBackground, ITaskCallback<Result> iTaskCallback) {
+        super(new Callable<Result>() {
             @Override
-            public Object call() throws Exception {
+            public Result call() throws Exception {
                 return iTaskBackground.onBackground();
             }
         });
@@ -51,7 +50,7 @@ public class AsyncTaskInstance extends FutureTask {
                 ThreadUtil.postMainThread(new Runnable() {
                     @Override
                     public void run() {
-                        iTaskCallback.onSuccess(object);
+                        iTaskCallback.onComplete(object);
                     }
                 });
 

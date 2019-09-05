@@ -1,8 +1,8 @@
 package com.cyt.task;
 
-public interface ITaskCallback {
+public interface ITaskCallback<Result> {
 
-    void onSuccess(Object o);
+    void onComplete(Result o);
 
     void onException(Throwable throwable);
 }

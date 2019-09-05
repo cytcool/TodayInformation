@@ -1,6 +1,6 @@
 package com.cyt.task;
 
-public interface ITaskBackground {
+public interface ITaskBackground<Result> {
 
-    Object onBackground();
+    Result onBackground();
 }

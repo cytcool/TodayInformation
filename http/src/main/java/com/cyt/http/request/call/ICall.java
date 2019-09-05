@@ -1,6 +1,11 @@
 package com.cyt.http.request.call;
 
+import com.cyt.http.request.IRequest;
+import com.cyt.http.response.IResponse;
+
 public interface ICall {
-    Object execute();
+    IResponse execute();
+
+    IRequest getRequest();
 }
 
