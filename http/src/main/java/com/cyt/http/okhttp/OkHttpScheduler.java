@@ -5,10 +5,16 @@ import com.cyt.http.annotation.RequestMethod;
 import com.cyt.http.request.IRequest;
 import com.cyt.http.request.call.ICall;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.Call;
+import okhttp3.Dns;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -51,6 +57,15 @@ public class OkHttpScheduler extends HttpScheduler {
     private OkHttpClient getClient() {
         if (client == null) {
             client = new OkHttpClient();
+            OkHttpClient.Builder builder = new OkHttpClient.Builder();
+            builder.dns(new Dns() {
+                @NotNull
+                @Override
+                public List<InetAddress> lookup(@NotNull String host) throws UnknownHostException {
+
+                    return null;
+                }
+            });
         }
         return client;
     }

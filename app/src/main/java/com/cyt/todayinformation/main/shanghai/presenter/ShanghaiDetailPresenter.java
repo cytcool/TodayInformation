@@ -1,11 +1,13 @@
 package com.cyt.todayinformation.main.shanghai.presenter;
 
+import android.util.Log;
 import com.cyt.http.result.IResult;
 import com.cyt.todayinformation.base.BasePresenter;
 import com.cyt.todayinformation.base.JHTask;
 import com.cyt.todayinformation.main.shanghai.dto.ShanghaiDetailBean;
 import com.cyt.todayinformation.main.shanghai.lf.IShanghaiDetailContract;
 import com.cyt.todayinformation.main.shanghai.module.ShangHaiDetailHttpServer;
+import com.google.gson.Gson;
 
 
 public class ShanghaiDetailPresenter extends BasePresenter<IShanghaiDetailContract.Iview> implements IShanghaiDetailContract.IPresenter{
@@ -56,9 +58,10 @@ public class ShanghaiDetailPresenter extends BasePresenter<IShanghaiDetailContra
             @Override
             public void onSuccess(IResult<ShanghaiDetailBean> t) {
                 ShanghaiDetailBean data = t.data();
-//                Gson gson = new Gson();
-//                String s = gson.toJson(data);
-//                Log.e("ShanghaiDetailBean",s);
+                Gson gson = new Gson();
+                String s = gson.toJson(data);
+                Log.e("ShanghaiDetailBean",s);
+
 
             }
         });
