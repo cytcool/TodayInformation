@@ -4,9 +4,9 @@ import androidx.fragment.app.Fragment;
 
 import com.cyt.todayinformation.R;
 import com.cyt.todayinformation.main.beijing.BeijingFragment;
-import com.cyt.todayinformation.main.hangzhou.HangzhouFragment;
+import com.cyt.todayinformation.main.hangzhou.HangZhouFragment;
 import com.cyt.todayinformation.main.shanghai.ShanghaiFragment;
-import com.cyt.todayinformation.main.shenzhen.ShenzhenFragment;
+import com.cyt.todayinformation.main.shenzhen.ShenZhenFragment;
 import com.cyt.mvp.mvp.base.BaseMvpPresenter;
 
 public class MainActivityPresenter extends BaseMvpPresenter<IMainActivityContract.Iview> implements IMainActivityContract.IPresenter {
@@ -104,13 +104,13 @@ public class MainActivityPresenter extends BaseMvpPresenter<IMainActivityContrac
                 fragment = new ShanghaiFragment();
                 break;
             case 1:
-                fragment = new HangzhouFragment();
+                fragment = new HangZhouFragment();
                 break;
             case 2:
                 fragment = new BeijingFragment();
                 break;
             case 3:
-                fragment = new ShenzhenFragment();
+                fragment = new ShenZhenFragment();
                 break;
         }
         mFragments[mCurrentFragmentIndex] = fragment;

@@ -1,6 +1,9 @@
 package com.cyt.todayinformation.main;
 
+import android.os.Build;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
@@ -47,6 +50,10 @@ public class MainActivity extends BaseActivity implements IMainActivityContract.
         initHomeFragment();
         changeAnim(rgMainBottom,rgMainTop);
         initCheckListener();
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            Window window = getWindow();
+//            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//        }
     }
 
     // 初始化HomeFragment
