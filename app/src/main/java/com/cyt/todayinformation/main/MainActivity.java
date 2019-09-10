@@ -1,9 +1,6 @@
 package com.cyt.todayinformation.main;
 
-import android.os.Build;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
@@ -13,6 +10,7 @@ import android.widget.RadioGroup;
 import androidx.fragment.app.Fragment;
 
 import com.cyt.todayinformation.R;
+import com.cyt.todayinformation.main.tools.StatusBarUtil;
 import com.cyt.todayinformation.base.BaseActivity;
 import com.cyt.todayinformation.base.ViewInject;
 import com.cyt.todayinformation.main.tools.MainConstantTool;
@@ -54,6 +52,14 @@ public class MainActivity extends BaseActivity implements IMainActivityContract.
 //            Window window = getWindow();
 //            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 //        }
+//        StatusBarUtil.setStatusBarColor(this,Color.rgb(255,127,96));
+//        setStatusBar();
+
+    }
+
+    protected void setStatusBar() {
+        //这里做了两件事情，1.使状态栏透明并使contentView填充到状态栏 2.预留出状态栏的位置，防止界面上的控件离顶部靠的太近。这样就可以实现开头说的第二种情况的沉浸式状态栏了
+        StatusBarUtil.setTransparent(this);
     }
 
     // 初始化HomeFragment

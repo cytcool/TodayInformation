@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.cyt.todayinformation.R;
 import com.cyt.todayinformation.base.BaseFragment;
 import com.cyt.todayinformation.base.ViewInject;
+import com.cyt.todayinformation.main.hangzhou.view.ZhiHuFragment;
 import com.cyt.todayinformation.main.shenzhen.ShenZhenFragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -33,19 +34,19 @@ public class HangZhouFragment extends BaseFragment {
         vpViewpager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                Log.d("HangZhouFragment","position" + position);
-                return new ShenZhenFragment();
+                Log.d("ZhiHuFragment","position" + position);
+                return new ZhiHuFragment();
             }
 
             @Override
             public int getCount() {
-                return 5;
+                return 1;
             }
 
             @Nullable
             @Override
             public CharSequence getPageTitle(int position) {
-                return "深圳";
+                return "知乎";
             }
         });
     }

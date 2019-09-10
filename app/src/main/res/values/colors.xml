@@ -8,4 +8,5 @@
     <color name="color_ADADAD">#ADADAD</color>
     <color name="color_FF7F1D">#FF7F1D</color>
     <color name="hard_color">#48495f</color>
+    <color name="transparent">#00000000</color>
 </resources>

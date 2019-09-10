@@ -37,6 +37,8 @@ dependencies {
     // OkHttp
     implementation 'com.squareup.okhttp3:okhttp:4.1.0'
 
+    implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+
     implementation project(path: ':mvp')
     implementation project(path: ':http')
     implementation project(path: ':task')

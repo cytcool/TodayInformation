@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import com.cyt.todayinformation.R;
 import com.cyt.todayinformation.base.BaseActivity;
 import com.cyt.todayinformation.base.ViewInject;
+import com.cyt.todayinformation.main.shanghai.dto.ShanghaiDetailBean;
 import com.cyt.todayinformation.main.shanghai.lf.IShanghaiDetailContract;
 import com.cyt.todayinformation.main.shanghai.manager.GetXiaoHuaTask;
 import com.cyt.todayinformation.main.shanghai.presenter.ShanghaiDetailPresenter;
@@ -47,7 +48,7 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
 //                mPresenter.getNetData();
 //            }
 //        });
-        mPresenter.getNetData();
+//        mPresenter.getNetData();
 //        Object desc = new ShangHaiDetailHttpServer().getXiaoHuaList("desc","1","1");
         GetXiaoHuaTask task = new GetXiaoHuaTask();
         task.execute("desc","1","1");
@@ -72,5 +73,10 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
             ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(activity,pair);
             ActivityCompat.startActivity(activity,intent,optionsCompat.toBundle());
         }
+    }
+
+    @Override
+    public void showData(ShanghaiDetailBean data) {
+
     }
 }
